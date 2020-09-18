@@ -1,19 +1,19 @@
 package ch.hearc.ig.bastien.tictactoe;
 
-/*
+/**
  * Grid class manage the game class and provide methods to interact with the grid
- * */
+ */
 public class Grid {
 
-    /*
+    /**
      * Stores the Positions played
-     * */
+     */
     private Position[][] grid = new Position[3][3];
 
-    /*
+    /**
      * Grid constructor
      * Fill the grid with non played Position
-     * */
+     */
     public Grid() {
         // Fill each grid positions
         for (int x = 0; x < this.grid.length; x++) {
@@ -31,16 +31,16 @@ public class Grid {
         this.grid = grid;
     }
 
-    /*
+    /**
      * Check if a specific grid position is played
-     * */
+     */
     public boolean isPositionFree(int x, int y) {
         return !grid[y][x].isPlayed();
     }
 
-    /*
+    /**
      * Check if a specific grid position is played
-     * */
+     */
     public char symbolAtPosition(int x, int y) {
         if (grid[y][x].isEmpty()) {
             return ' ';
@@ -49,16 +49,16 @@ public class Grid {
         }
     }
 
-    /*
+    /**
      * Play in a position with a specific player
-     * */
+     */
     public void playPosition(int x, int y, Player player) {
         grid[y][x].setPlayer(player);
     }
 
-    /*
+    /**
      * Check if all the positions of the grid are played
-     * */
+     */
     public boolean isFull() {
         int i = 0;
         for (Position[] line : this.grid) {
@@ -72,9 +72,9 @@ public class Grid {
         return i >= 9;
     }
 
-    /*
+    /**
      * Check if there is a winner in the grid
-     * */
+     */
     public Player hasWinner() throws NoWinnerException {
 
         boolean flag;
@@ -142,17 +142,17 @@ public class Grid {
         throw new NoWinnerException();
     }
 
-    /*
+    /**
      * Determine the x coordinate from a case number
-     * */
+     */
     public int getX(int caseNumber) {
         int[] xCases = {0, 0, 1, 2, 0, 1, 2, 0, 1, 2};
         return xCases[caseNumber];
     }
 
-    /*
+    /**
      * Determine the y coordinate from a case number
-     * */
+     */
     public int getY(int caseNumber) {
         int[] yCases = {0, 0, 0, 0, 1, 1, 1, 2, 2, 2};
         return yCases[caseNumber];

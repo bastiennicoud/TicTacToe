@@ -1,5 +1,9 @@
 package ch.hearc.ig.bastien.tictactoe;
 
+
+/**
+ * A human player
+ */
 public class HumanPlayer extends Player {
 
     Interaction interact;

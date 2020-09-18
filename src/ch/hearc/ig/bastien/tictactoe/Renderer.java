@@ -2,9 +2,9 @@ package ch.hearc.ig.bastien.tictactoe;
 
 import java.util.ArrayList;
 
-/*
+/**
  * Provides methods to generate strings for display from data's
- * */
+ */
 public class Renderer {
 
     Display display;
@@ -13,24 +13,25 @@ public class Renderer {
         this.display = display;
     }
 
-    /*
-     * Render a simple line message */
+    /**
+     * Render a simple line message
+     */
     public void simpleMessage(String message) {
         display.renderLine(message);
     }
 
-    /*
+    /**
      * Render empty lines
-     * */
+     */
     public void emptyLines(int count) {
         for (int i = 0; i < count; i++) {
             display.renderLine("");
         }
     }
 
-    /*
+    /**
      * Display a multiline message with big heading and footer
-     * */
+     */
     public void bigMessage(String... message) {
         ArrayList<String> canvas = new ArrayList<>();
 
@@ -45,6 +46,12 @@ public class Renderer {
         display.renderCanvas(canvas);
     }
 
+
+    /**
+     * Render the game grid in the console
+     *
+     * @param grid the new game grid to render
+     */
     public void gameGrid(Grid grid) {
         ArrayList<String> canvas = new ArrayList<>();
 

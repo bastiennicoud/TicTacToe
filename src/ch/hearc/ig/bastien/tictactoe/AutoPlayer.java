@@ -2,6 +2,9 @@ package ch.hearc.ig.bastien.tictactoe;
 
 import java.util.Random;
 
+/**
+ * A automatic player that always play random moves ;)
+ */
 public class AutoPlayer extends Player {
 
     private final Random random = new Random();

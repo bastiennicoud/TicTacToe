@@ -1,9 +1,9 @@
 package ch.hearc.ig.bastien.tictactoe;
 
-/*
+/**
  * TicTacToe game main class
  * This class is responsible of the game management
- * */
+ */
 public class TicTacToe {
 
     Renderer renderer;
@@ -16,15 +16,18 @@ public class TicTacToe {
 
     int round;
 
+    /**
+     * Initialize the base components of the game
+     */
     public TicTacToe() {
         this.renderer = new Renderer(new Display());
         this.interact = new Interaction(this.renderer);
         this.grid = new Grid();
     }
 
-    /*
+    /**
      * Start the game
-     * */
+     */
     public void start() {
 
         renderer.bigMessage("Hello", "TicTacToe");
@@ -37,9 +40,9 @@ public class TicTacToe {
 
     }
 
-    /*
+    /**
      * Check if you can play a new round
-     * */
+     */
     public boolean isPlayable() {
         try {
             // If there is a winner the game is finished
@@ -51,9 +54,9 @@ public class TicTacToe {
         }
     }
 
-    /*
+    /**
      * Display the winner of the game
-     * */
+     */
     public void showWinner() {
         // Show the state of the grid
         renderer.gameGrid(grid);
@@ -65,10 +68,10 @@ public class TicTacToe {
         }
     }
 
-    /*
+    /**
      * Start a new round
      * Do nothing if the game is terminated
-     * */
+     */
     public void newRound() {
 
         // To store the ref to the player wo play this round
