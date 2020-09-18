@@ -1,6 +1,6 @@
 package ch.hearc.ig.bastien.tictactoe;
 
-public class Player {
+public abstract class Player {
 
     char symbol;
 
@@ -15,4 +15,6 @@ public class Player {
     public void setSymbol(char symbol) {
         this.symbol = symbol;
     }
+
+    public abstract int playRound();
 }

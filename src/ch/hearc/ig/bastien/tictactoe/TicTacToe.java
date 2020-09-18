@@ -30,8 +30,8 @@ public class TicTacToe {
         renderer.bigMessage("Hello", "TicTacToe");
 
         // Create two players for the game
-        pl1 = new Player('X');
-        pl2 = new Player('O');
+        pl1 = new HumanPlayer('X', interact);
+        pl2 = new AutoPlayer('O', renderer);
         // Set the round
         round = 1;
 
@@ -84,12 +84,12 @@ public class TicTacToe {
         }
 
         // Ask the next player move
-        int caseNumber = interact.askNextMove(roundPlayer);
+        int caseNumber = roundPlayer.playRound();
 
         // Check if the move is possible
         while (!grid.isPositionFree(grid.getX(caseNumber), grid.getY(caseNumber))) {
             renderer.simpleMessage("This case is already taken ! Try another...");
-            caseNumber = interact.askNextMove(roundPlayer);
+            caseNumber = roundPlayer.playRound();
         }
 
         // Stores the player round choice in the grid
