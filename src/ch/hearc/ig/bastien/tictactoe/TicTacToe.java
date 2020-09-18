@@ -32,6 +32,7 @@ public class TicTacToe {
         // Create two players for the game
         pl1 = new Player('X');
         pl2 = new Player('O');
+        // Set the round
         round = 1;
 
     }
@@ -41,9 +42,11 @@ public class TicTacToe {
      * */
     public boolean isPlayable() {
         try {
+            // If there is a winner the game is finished
             this.winner = grid.hasWinner();
             return false;
         } catch (NoWinnerException e) {
+            // If there is no winner, check if the grid is full or not
             return !grid.isFull();
         }
     }
