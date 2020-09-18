@@ -2,6 +2,9 @@ package ch.hearc.ig.bastien.tictactoe;
 
 import java.util.Scanner;
 
+/*
+ * Provides methods to interact with user in the console
+ * */
 public class Interaction {
 
     Renderer renderer;

@@ -3,8 +3,8 @@ package ch.hearc.ig.bastien.tictactoe;
 import java.util.ArrayList;
 
 /*
-* Provides methods to generate strings for display from data's
-* */
+ * Provides methods to generate strings for display from data's
+ * */
 public class Renderer {
 
     Display display;
@@ -14,14 +14,14 @@ public class Renderer {
     }
 
     /*
-    * Render a simple line message */
+     * Render a simple line message */
     public void simpleMessage(String message) {
         display.renderLine(message);
     }
 
     /*
-    * Render empty lines
-    * */
+     * Render empty lines
+     * */
     public void emptyLines(int count) {
         for (int i = 0; i < count; i++) {
             display.renderLine("");
@@ -29,14 +29,14 @@ public class Renderer {
     }
 
     /*
-    * Display a multiline message with big heading and footer
-    * */
+     * Display a multiline message with big heading and footer
+     * */
     public void bigMessage(String... message) {
         ArrayList<String> canvas = new ArrayList<>();
 
         canvas.add("****************************************");
         canvas.add("**");
-        for (String l: message) {
+        for (String l : message) {
             canvas.add("**  " + l);
         }
         canvas.add("**");
@@ -51,11 +51,11 @@ public class Renderer {
         canvas.add("****************************************");
         canvas.add("**   Case number   **    Game grid    **");
         canvas.add("**                 **                 **");
-        canvas.add("**    1 | 2 | 3    **    " + grid.symbolAtPosition(0,0) + " | " + grid.symbolAtPosition(1,0)  + " | " + grid.symbolAtPosition(2,0) + "    **");
+        canvas.add("**    1 | 2 | 3    **    " + grid.symbolAtPosition(0, 0) + " | " + grid.symbolAtPosition(1, 0) + " | " + grid.symbolAtPosition(2, 0) + "    **");
         canvas.add("**   ---+---+---   **   ---+---+---   **");
-        canvas.add("**    4 | 5 | 6    **    " + grid.symbolAtPosition(0,1) + " | " + grid.symbolAtPosition(1,1)  + " | " + grid.symbolAtPosition(2,1) + "    **");
+        canvas.add("**    4 | 5 | 6    **    " + grid.symbolAtPosition(0, 1) + " | " + grid.symbolAtPosition(1, 1) + " | " + grid.symbolAtPosition(2, 1) + "    **");
         canvas.add("**   ---+---+---   **   ---+---+---   **");
-        canvas.add("**    7 | 8 | 9    **    " + grid.symbolAtPosition(0,2) + " | " + grid.symbolAtPosition(1,2)  + " | " + grid.symbolAtPosition(2,2) + "    **");
+        canvas.add("**    7 | 8 | 9    **    " + grid.symbolAtPosition(0, 2) + " | " + grid.symbolAtPosition(1, 2) + " | " + grid.symbolAtPosition(2, 2) + "    **");
         canvas.add("**                 **                 **");
         canvas.add("****************************************");
 
